@@ -106,6 +106,9 @@ public class BinarySearch {
                 i = m;
                 candidate = m;
             }
+
+
+
         }
         return candidate;
     }
