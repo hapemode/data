@@ -1,5 +1,8 @@
 package com.ppx.da;
 
+/**
+ * 二分查找
+ */
 public class BinarySearch {
 
     /**
@@ -72,11 +75,12 @@ public class BinarySearch {
 
     /**
      * 二分最左查找
+     *
      * @param arr
      * @param target
      * @return
      */
-    public static int bs4(int[] arr, int target) {
+    public static int bsLeft(int[] arr, int target) {
         int i = 0, j = arr.length;
         int candidate = -1;
         while (i < j) {
@@ -93,22 +97,26 @@ public class BinarySearch {
         return candidate;
     }
 
-    public static int bs5(int[] arr, int target) {
+    /**
+     * 二分最右查找
+     *
+     * @param arr
+     * @param target
+     * @return
+     */
+    public static int bsRight(int[] arr, int target) {
         int i = 0, j = arr.length;
         int candidate = -1;
-        while (i < j) {
+        while (i <= j) {
             int m = (i + j) >>> 1;
             if (arr[m] < target) {
                 i = m + 1;
             } else if (target < arr[m]) {
-                j = m;
+                j = m - 1;
             } else {
-                i = m;
+                i = m + 1;
                 candidate = m;
             }
-
-
-
         }
         return candidate;
     }
