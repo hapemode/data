@@ -39,15 +39,15 @@ public class BinarySearchTest {
         System.out.println("i1 = " + i1);
     }
 
-    private static int[] arr2 = {1, 3, 3, 5, 5, 5, 7, 9, 9};
+    private static int[] arr2 = {1, 3, 3, 5, 5, 5, 5, 5, 5, 7, 9, 9};
 
     @Test
     public void t5() {
-        System.out.println("BinarySearch.bs4(arr2, 5) = " + BinarySearch.bs4(arr2, 5));
+        System.out.println("BinarySearch.bsLeft(arr2, 5) = " + BinarySearch.bsLeft(arr2, 5));
     }
 
     @Test
     public void t6() {
-        System.out.println("BinarySearch.bs4(arr2, 5) = " + BinarySearch.bs5(arr2, 5));
+        System.out.println("BinarySearch.bsLeft(arr2, 5) = " + BinarySearch.bsRight(arr2, 5));
     }
 }
