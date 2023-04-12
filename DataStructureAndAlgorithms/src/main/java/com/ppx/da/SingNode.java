@@ -42,18 +42,18 @@ public class SingNode implements Iterable<Integer> {
      */
     @Override
     public Iterator<Integer> iterator() {
-        new Iterator<Iterator>() {
+        Iterator<Integer> iterator = new Iterator<Integer>() {
             @Override
             public boolean hasNext() {
                 return null != head.next;
             }
 
             @Override
-            public Iterator next() {
-
-                return null;
+            public Integer next() {
+                return head.value;
             }
-        }
+        };
+        Integer next = iterator.next();
     }
 
 }
