@@ -1,9 +1,11 @@
 package com.ppx.da;
 
+import java.util.Iterator;
+
 /**
  * 单项链表
  */
-public class SingNode {
+public class SingNode implements Iterable<Integer> {
 
     Node head = null;
 
@@ -26,8 +28,32 @@ public class SingNode {
         head = new Node(value, head);
     }
 
-    public void loop1(){
+    /**
+     * 遍历
+     */
+    public void loop1() {
 
+    }
+
+    /**
+     * 遍历
+     *
+     * @return
+     */
+    @Override
+    public Iterator<Integer> iterator() {
+        new Iterator<Iterator>() {
+            @Override
+            public boolean hasNext() {
+                return null != head.next;
+            }
+
+            @Override
+            public Iterator next() {
+
+                return null;
+            }
+        }
     }
 
 }
