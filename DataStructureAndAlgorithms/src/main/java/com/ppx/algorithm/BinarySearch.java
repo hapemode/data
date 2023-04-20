@@ -1,4 +1,4 @@
-package com.ppx.da;
+package com.ppx.algorithm;
 
 /**
  * 二分查找

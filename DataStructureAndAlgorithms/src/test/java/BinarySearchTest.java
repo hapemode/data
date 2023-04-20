@@ -1,4 +1,4 @@
-import com.ppx.da.BinarySearch;
+import com.ppx.algorithm.BinarySearch;
 import org.junit.Test;
 
 import java.util.Arrays;

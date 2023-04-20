@@ -1,4 +1,4 @@
-package com.ppx.da;
+package com.ppx.structure;
 
 import java.util.Iterator;
 
@@ -54,6 +54,7 @@ public class SingNode implements Iterable<Integer> {
             }
         };
         Integer next = iterator.next();
+        return null;
     }
 
 }
