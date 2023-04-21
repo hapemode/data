@@ -25,24 +25,55 @@ public class SingNode implements Iterable<Integer> {
      * @param value
      */
     public void addFirst(int value) {
-        head = new Node(value, head);
+        this.head = new Node(value, head);
+    }
+
+    /**
+     * 链表尾部添加
+     *
+     * @param value
+     */
+    public void addLast(int value) {
+        Node node = findLast(head);
+    }
+
+    private Node findLast(Node head) {
+        if (head.next == null) {
+            return head;
+        } else {
+            head = head.next;
+            return findLast(head);
+        }
     }
 
     /**
      * 遍历
      */
-    public void loop1() {
-
+    public void loopWhile() {
+        Node next = head.next;
+        while (next != null) {
+            System.out.println(next.value);
+            next = next.next;
+        }
     }
 
     /**
-     * 遍历
+     * 遍历for循环
+     */
+    public void loopForeach() {
+        for (Node next = head; next != null; next = head.next) {
+            System.out.println(next.value);
+        }
+    }
+
+    /**
+     * 遍历-迭代器
      *
      * @return
      */
     @Override
     public Iterator<Integer> iterator() {
-        Iterator<Integer> iterator = new Iterator<Integer>() {
+        return new Iterator<Integer>() {
             @Override
             public boolean hasNext() {
                 return null != head.next;
@@ -53,9 +84,21 @@ public class SingNode implements Iterable<Integer> {
                 return head.value;
             }
         };
-        Integer next = iterator.next();
-        return null;
     }
 
+    /**
+     * 递归遍历
+     *
+     * @param node
+     */
+    public void recursion(Node node) {
+        if (node.next == null) {
+            return;
+        }
+
+        System.out.println(node.value);
+
+        recursion(node.next);
+    }
 }
 

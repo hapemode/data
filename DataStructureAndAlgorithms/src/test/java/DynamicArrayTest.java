@@ -19,5 +19,8 @@ public class DynamicArrayTest {
         System.out.println("remove = " + remove);
         System.out.println("--------------");
         dynamicArray.loop(integer -> System.out.println(integer));
+
+        System.out.println("--------------");
+        dynamicArray.stream().forEach(o-> System.out.println(o));
     }
 }
