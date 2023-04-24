@@ -35,15 +35,116 @@ public class SingNode implements Iterable<Integer> {
      */
     public void addLast(int value) {
         Node node = findLast(head);
+        if (node == null) {
+            this.head = new Node(value, null);
+        } else {
+            node.next = new Node(value, null);
+        }
+    }
+
+    /**
+     * 尾部添加多个
+     *
+     * @param first
+     * @param rest
+     */
+    public void addLast(int first, int... rest) {
+
+        Node sublist = new Node(first, null);
+        Node curr = sublist;
+        for (int value : rest) {
+            curr.next = new Node(value, null);
+            curr = curr.next;
+        }
+        Node last = findLast(head);
+        if (last == null) {
+            this.head = sublist;
+            return;
+        }
+        last.next = sublist;
     }
 
     private Node findLast(Node head) {
+        if (head == null) {
+            return null;
+        }
         if (head.next == null) {
             return head;
         } else {
-            head = head.next;
-            return findLast(head);
+            return findLast(head.next);
         }
+    }
+
+    /**
+     * 根据索引查找
+     *
+     * @param index
+     * @return
+     */
+    public int findByIndex(int index) {
+        int i = 0;
+        for (Node next = head; next != null; next = next.next) {
+            if (i == index) {
+                return next.value;
+            }
+            i++;
+        }
+        return -1;
+    }
+
+    /**
+     * 插入
+     *
+     * @param index
+     * @param value
+     */
+    public void insert(int index, int value) {
+        if (index == 0) {
+            addFirst(value);
+            return;
+        }
+
+        Node node = findNode(index - 1);
+        if (node != null) {
+            node.next = new Node(value, node.next);
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
+    /**
+     * 移除
+     *
+     * @param index
+     */
+    public void remove(int index) {
+        if (index == 0) {
+            if (head != null) {
+                head = head.next;
+                return;
+            } else {
+                throw new IndexOutOfBoundsException();
+            }
+        }
+
+        Node node = findNode(index - 1);
+        Node curr;
+        if (node != null && (curr = node.next) != null) {
+            node.next = curr.next;
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
+    private Node findNode(int index) {
+        int i = 0;
+        for (Node next = head; next != null; next = next.next) {
+            if (i == index) {
+                return next;
+            }
+            i++;
+        }
+        return null;
     }
 
     /**
@@ -89,15 +190,17 @@ public class SingNode implements Iterable<Integer> {
     /**
      * 递归遍历
      *
-     * @param node
+     * @param
      */
+    public void loopRecursion() {
+        recursion(this.head);
+    }
+
     public void recursion(Node node) {
-        if (node.next == null) {
+        if (node == null) {
             return;
         }
-
         System.out.println(node.value);
-
         recursion(node.next);
     }
 }
