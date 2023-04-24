@@ -64,6 +64,9 @@ public class SinglyLinkedListSentinel {
         curr.next = new Node(value, null);
     }
 
+    /**
+     * 遍历
+     */
     public void forEach() {
         Node curr;
         for (curr = this.head; curr.next != null; ) {
@@ -72,5 +75,31 @@ public class SinglyLinkedListSentinel {
         }
     }
 
+    /**
+     * 插入
+     *
+     * @param index
+     * @param value
+     */
+    public void insert(int index, int value) {
+        Node node = findNode(index - 1);
+        if (node != null) {
+            node.next = new Node(value, node.next);
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
+    private Node findNode(int index) {
+        Node curr;
+        int i = 0;
+        for (curr = this.head; curr.next != null; curr = curr.next) {
+            if (i == index) {
+                return curr;
+            }
+            i++;
+        }
+        return null;
+    }
 
 }
