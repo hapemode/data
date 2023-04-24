@@ -1,11 +1,11 @@
-import com.ppx.structure.SingNode;
+import com.ppx.structure.SinglyLinkedList;
 import org.junit.Test;
 
-public class SingNodeTest {
+public class SinglyLinkedListTest {
 
     @Test
     public void t1() {
-        SingNode node = new SingNode();
+        SinglyLinkedList node = new SinglyLinkedList();
         node.addFirst(1);
         node.addFirst(2);
         node.addFirst(3);
@@ -16,7 +16,7 @@ public class SingNodeTest {
 
     @Test
     public void t2() {
-        SingNode node = new SingNode();
+        SinglyLinkedList node = new SinglyLinkedList();
         node.addLast(1);
         node.addLast(2);
         node.addLast(3);
@@ -26,14 +26,14 @@ public class SingNodeTest {
 
     @Test
     public void t3() {
-        SingNode node = new SingNode();
+        SinglyLinkedList node = new SinglyLinkedList();
         node.addLast(1, 2, 3, 4, 5);
         node.loopRecursion();
     }
 
     @Test
     public void t4() {
-        SingNode node = new SingNode();
+        SinglyLinkedList node = new SinglyLinkedList();
         node.addLast(1, 2, 3, 4, 5);
         int byIndex = node.findByIndex(0);
         System.out.println("byIndex = " + byIndex);

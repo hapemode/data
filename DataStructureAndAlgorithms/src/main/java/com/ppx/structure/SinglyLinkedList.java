@@ -3,9 +3,9 @@ package com.ppx.structure;
 import java.util.Iterator;
 
 /**
- * 单项链表
+ * 单向链表
  */
-public class SingNode implements Iterable<Integer> {
+public class SinglyLinkedList implements Iterable<Integer> {
 
     Node head = null;
 
