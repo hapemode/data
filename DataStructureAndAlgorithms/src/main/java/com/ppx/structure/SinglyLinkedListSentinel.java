@@ -23,14 +23,14 @@ public class SinglyLinkedListSentinel {
      * @param index
      * @return
      */
-    public Node findByIndex(int index) {
+    public int findByIndex(int index) {
         int i = -1;
         for (Node node = this.head; node != null; node = node.next, i++) {
             if (i == index) {
-                return node;
+                return node.value;
             }
         }
-        return null;
+        return i;
     }
 
     /**
@@ -64,9 +64,48 @@ public class SinglyLinkedListSentinel {
         curr.next = new Node(value, null);
     }
 
+    public void remove(int index) {
+        Node node = findNode(index - 1);
+        Node curr;
+        if (node != null && (curr = node.next) != null) {
+            node.next = curr.next;
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
+    private Node findNode(int index) {
+        Node curr;
+        int i = -1;
+        for (curr = this.head; curr.next != null; ) {
+            if (i == index) {
+                return curr;
+            }
+            curr = curr.next;
+            i++;
+        }
+        return null;
+    }
+
+    public void removeLast() {
+        Node curr;
+        for (curr = head.next; curr != null; ) {
+            if (curr.next == null) {
+
+            }
+        }
+    }
+
+    public void removeByIndex() {
+
+    }
+
+    /**
+     * 遍历
+     */
     public void forEach() {
         Node curr;
-        for (curr = this.head; curr.next != null; ) {
+        for (curr = this.head; curr != null; ) {
             System.out.println(curr.value);
             curr = curr.next;
         }
