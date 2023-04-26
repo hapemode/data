@@ -1,5 +1,5 @@
 import com.ppx.structure.DynamicArray;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class DynamicArrayTest {
 
