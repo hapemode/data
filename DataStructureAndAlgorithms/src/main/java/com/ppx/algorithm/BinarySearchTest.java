@@ -1,3 +1,5 @@
+package com.ppx.algorithm;
+
 import com.ppx.algorithm.BinarySearch;
 import org.junit.jupiter.api.Test;
 

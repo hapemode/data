@@ -1,4 +1,4 @@
-package com.ppx.structure;
+package com.ppx.structure.linkedList;
 
 import java.util.Iterator;
 
@@ -81,7 +81,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
      * @param index
      * @return
      */
-    public int findByIndex(int index) {
+    public int get(int index) {
         int i = 0;
         for (Node next = head; next != null; next = next.next) {
             if (i == index) {
@@ -110,6 +110,10 @@ public class SinglyLinkedList implements Iterable<Integer> {
         } else {
             throw new IndexOutOfBoundsException();
         }
+    }
+
+    public void removeFirst() {
+        remove(0);
     }
 
     /**

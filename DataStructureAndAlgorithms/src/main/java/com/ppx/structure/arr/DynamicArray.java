@@ -1,4 +1,4 @@
-package com.ppx.structure;
+package com.ppx.structure.arr;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -83,7 +83,7 @@ public class DynamicArray implements Iterable<Integer> {
      *
      * @param consumer
      */
-    public void loop(Consumer<Integer> consumer) {
+    public void foreach(Consumer<Integer> consumer) {
         for (int i = 0; i < size; i++) {
             consumer.accept(arr[i]);
         }

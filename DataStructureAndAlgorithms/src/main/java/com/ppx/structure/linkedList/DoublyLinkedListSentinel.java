@@ -1,4 +1,4 @@
-package com.ppx.structure;
+package com.ppx.structure.linkedList;
 
 import java.util.Iterator;
 
