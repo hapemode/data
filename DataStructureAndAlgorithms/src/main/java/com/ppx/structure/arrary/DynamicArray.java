@@ -1,4 +1,4 @@
-package com.ppx.structure.arr;
+package com.ppx.structure.arrary;
 
 import java.util.Arrays;
 import java.util.Iterator;

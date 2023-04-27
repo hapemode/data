@@ -1,4 +1,4 @@
-package com.ppx.structure.arr;
+package com.ppx.structure.arrary;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
