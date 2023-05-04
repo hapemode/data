@@ -37,9 +37,11 @@ public class DoublyAnnularLinkedListSentinel implements Iterable<Integer> {
     public void insert(int index, int value) {
         Node node = findNode(index);
         if (node == null) {
-            throw new IndexOutOfBoundsException();
+            throw new IllegalArgumentException();
         }
-        node.prev = new Node(node, value, node.next);
+        Node in = new Node(node.prev, value, node);
+        node.prev = in;
+        node.prev.next = in;
 
     }
 
@@ -53,16 +55,29 @@ public class DoublyAnnularLinkedListSentinel implements Iterable<Integer> {
         return null;
     }
 
-    public void removeFirst(int value) {
-        Node node = findNodeByIndex(0);
+    public void removeFirst() {
+        remove(0);
+    }
+
+    private void remove(int index) {
+        Node node = findNodeByIndex(index);
         if (node == sentinel) {
             throw new IllegalArgumentException();
         }
+        Node prev = node.prev;
+        Node next = node.next;
+        prev.next = next;
+        next.prev = prev;
     }
 
-
-    public void removeLast(int value) {
-
+    public void removeLast() {
+        Node prev = sentinel.prev;
+        if (prev == sentinel) {
+            throw new IllegalArgumentException();
+        }
+        Node prev1 = prev.prev;
+        prev1.next = sentinel;
+        sentinel.prev = prev1;
     }
 
     private Node findNodeByIndex(int index) {

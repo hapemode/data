@@ -1,4 +1,4 @@
-package com.ppx.algorithm;
+package com.ppx.algorithm.binarySearch;
 
 /**
  * 二分查找
