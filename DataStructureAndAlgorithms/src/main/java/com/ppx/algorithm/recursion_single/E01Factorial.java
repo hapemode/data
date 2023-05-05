@@ -1,4 +1,4 @@
-package com.ppx.algorithm.recursion;
+package com.ppx.algorithm.recursion_single;
 
 /**
  * 递归求阶乘
