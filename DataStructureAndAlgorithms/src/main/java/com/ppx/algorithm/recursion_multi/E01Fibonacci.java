@@ -18,7 +18,7 @@ public class E01Fibonacci {
     }
 
     public static void main(String[] args) {
-        int f = f(2);
+        int f = f(5);
         System.out.println("f = " + f);
     }
 }
